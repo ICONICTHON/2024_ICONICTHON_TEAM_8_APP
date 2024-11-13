@@ -1,0 +1,2 @@
+# 2024_ICONICTHON_TEAM_8_FE
+[8팀] 날찾아조 FE 레포지토리
