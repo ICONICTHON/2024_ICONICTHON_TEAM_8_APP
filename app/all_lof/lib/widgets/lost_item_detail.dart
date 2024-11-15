@@ -37,7 +37,7 @@ class LostItemDetail extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    '보관 장소: ${lostItem.location} 옆 관리실',
+                    '보관 장소: ${lostItem.storageLocation}',
                     style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
@@ -233,7 +233,7 @@ class LostItemDetail extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '보관 장소: ${lostItem.location} 옆 관리실',
+                    '보관 장소: ${lostItem.storageLocation}',
                     style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
@@ -286,10 +286,7 @@ class LostItemDetail extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: 1,
-        onTap: (index) {
-          // 하단 네비게이션 바 아이템 선택 시 동작 처리
-        },
+        currentIndex: 0,
       ),
     );
   }

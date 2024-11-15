@@ -1,14 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:all_lof/screens/lost_list_page.dart';
+import 'package:all_lof/screens/category_page.dart';
+import 'package:all_lof/screens/my_page.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
-  final Function(int) onTap;
 
   const CustomBottomNavigationBar({
     Key? key,
     required this.currentIndex,
-    required this.onTap,
   }) : super(key: key);
+
+  void _onItemTapped(BuildContext context, int index) {
+    if (index == currentIndex) return; // 현재 선택된 탭을 누르면 아무 작업도 하지 않음
+
+    if (index == 0) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LostListPage()),
+      );
+    } else if (index == 1) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const CategoryPage()),
+      );
+    } else if (index == 2) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const MyPage()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +91,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             fontSize: 11,
             fontWeight: FontWeight.w500,
           ),
-          onTap: onTap,
+          onTap: (index) => _onItemTapped(context, index),
         ),
       ],
     );
